@@ -1,0 +1,755 @@
+{
+    "ocr_text": "\u2014\u2014\u2014\u2014\u2014\u2014\nTHE CORNER BISTRO\n\nSTARTERS\n\nBuffalo Chicken Wings ..........:seecrrrere ee 12.99\nten wings ceery bue cneese\n\nMozzarella Sticks ..........cceeerree reer tee\nrouse rannars\n\nChips and Guacamole .......... ce 8.99\n\nMAINS\nClassic Cheeseburger ..........-..:cecrrrrrer ne 15.99\nlettuce tomate picbies 1:85\nChicken Parmesan ..........ccccrrrrrrrr 21.00\nspaghett: marinara mozlarel:a\nGrilled Atlantic Salmon ..........-csercreree re 27.50\nece asparagus lemon butter\n12 02 Ribeye Steak .......... eee 38.00\nmashed patatoes proc coli\nMargherita Pizza ........-scceeeeeernee 16.00\nfregh morzare\u2019a bas!\nCnosar Salad ooo... 11.00\nromaine parmesan. CrOulOns\nDRINKS\nFountain Soda ........cceee eee 3.49\nDraft Beer oo... ee 7.00\n10.00\n\nHouse Wine\n\n",
+    "items": [
+        {
+            "name": "Buffalo Chicken Wings",
+            "price": 12.99,
+            "description": "ten wings ceery bue"
+        },
+        {
+            "name": "Chips and Guacamole",
+            "price": 8.99,
+            "description": ""
+        },
+        {
+            "name": "Classic Cheeseburger",
+            "price": 15.99,
+            "description": ""
+        },
+        {
+            "name": "lettuce tomate picbies 1",
+            "price": 85.0,
+            "description": ""
+        },
+        {
+            "name": "Chicken Parmesan",
+            "price": 21.0,
+            "description": "spaghett: marinara mozlarel:a"
+        },
+        {
+            "name": "Grilled Atlantic Salmon",
+            "price": 27.5,
+            "description": "ece asparagus lemon butter"
+        },
+        {
+            "name": "12 02 Ribeye Steak",
+            "price": 38.0,
+            "description": "mashed patatoes proc coli"
+        },
+        {
+            "name": "Margherita Pizza",
+            "price": 16.0,
+            "description": "fregh morzare\u2019a bas"
+        },
+        {
+            "name": "Cnosar Salad",
+            "price": 11.0,
+            "description": "romaine parmesan. CrOulOns"
+        },
+        {
+            "name": "Fountain Soda",
+            "price": 3.49,
+            "description": ""
+        },
+        {
+            "name": "Draft Beer",
+            "price": 7.0,
+            "description": "House Wine"
+        }
+    ],
+    "disclaimer": "All ingredient costs are ESTIMATES of raw food cost per typical restaurant portion at U.S. grocery/wholesale prices. They exclude labor, rent, prep waste, and overhead.",
+    "count": 11,
+    "results": [
+        {
+            "name": "Chips and Guacamole",
+            "description": "",
+            "price": 8.99,
+            "matched_dish": "Guacamole",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 3.85,
+            "markup_multiple": 2.34,
+            "markup_pct": 134,
+            "food_cost_pct": 42.8,
+            "breakdown": [
+                {
+                    "ingredient": "avocado",
+                    "quantity": 2.0,
+                    "unit": "each",
+                    "unit_price": 1.25,
+                    "cost": 2.5,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "tortilla chips",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 3.49,
+                    "cost": 0.87,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "lime",
+                    "quantity": 0.5,
+                    "unit": "each",
+                    "unit_price": 0.35,
+                    "cost": 0.17,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "tomato",
+                    "quantity": 0.08,
+                    "unit": "lb",
+                    "unit_price": 1.99,
+                    "cost": 0.16,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "red onion",
+                    "quantity": 0.04,
+                    "unit": "lb",
+                    "unit_price": 1.49,
+                    "cost": 0.06,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "cilantro",
+                    "quantity": 0.01,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 0.04,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "jalapeno",
+                    "quantity": 0.02,
+                    "unit": "lb",
+                    "unit_price": 1.99,
+                    "cost": 0.04,
+                    "source": "RET"
+                }
+            ],
+            "rank": 1,
+            "band": "green"
+        },
+        {
+            "name": "Buffalo Chicken Wings",
+            "description": "ten wings ceery bue",
+            "price": 12.99,
+            "matched_dish": "Buffalo Wings",
+            "match_score": 80.6,
+            "method": "database",
+            "confidence": "medium",
+            "notes": [],
+            "est_cost": 4.99,
+            "markup_multiple": 2.6,
+            "markup_pct": 160,
+            "food_cost_pct": 38.4,
+            "breakdown": [
+                {
+                    "ingredient": "chicken wings",
+                    "quantity": 1.0,
+                    "unit": "lb",
+                    "unit_price": 3.49,
+                    "cost": 3.49,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "blue cheese",
+                    "quantity": 0.05,
+                    "unit": "lb",
+                    "unit_price": 9.99,
+                    "cost": 0.5,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "buffalo hot sauce",
+                    "quantity": 2.0,
+                    "unit": "fl oz",
+                    "unit_price": 0.15,
+                    "cost": 0.3,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "ranch dressing",
+                    "quantity": 1.0,
+                    "unit": "fl oz",
+                    "unit_price": 0.16,
+                    "cost": 0.16,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "celery",
+                    "quantity": 0.1,
+                    "unit": "lb",
+                    "unit_price": 1.49,
+                    "cost": 0.15,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "frying oil (absorbed/amortized)",
+                    "quantity": 2.0,
+                    "unit": "fl oz",
+                    "unit_price": 0.07,
+                    "cost": 0.14,
+                    "source": "WHL"
+                },
+                {
+                    "ingredient": "butter",
+                    "quantity": 0.03,
+                    "unit": "lb",
+                    "unit_price": 4.49,
+                    "cost": 0.13,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "carrot",
+                    "quantity": 0.1,
+                    "unit": "lb",
+                    "unit_price": 1.19,
+                    "cost": 0.12,
+                    "source": "BLS"
+                }
+            ],
+            "rank": 2,
+            "band": "green"
+        },
+        {
+            "name": "12 02 Ribeye Steak",
+            "description": "mashed patatoes proc coli",
+            "price": 38.0,
+            "matched_dish": "Grilled Ribeye Steak",
+            "match_score": 80.0,
+            "method": "database",
+            "confidence": "medium",
+            "notes": [],
+            "est_cost": 13.15,
+            "markup_multiple": 2.89,
+            "markup_pct": 189,
+            "food_cost_pct": 34.6,
+            "breakdown": [
+                {
+                    "ingredient": "ribeye steak",
+                    "quantity": 0.85,
+                    "unit": "lb",
+                    "unit_price": 13.99,
+                    "cost": 11.89,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "broccoli",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 2.49,
+                    "cost": 0.62,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "russet potato",
+                    "quantity": 0.5,
+                    "unit": "lb",
+                    "unit_price": 0.89,
+                    "cost": 0.45,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "butter",
+                    "quantity": 0.03,
+                    "unit": "lb",
+                    "unit_price": 4.49,
+                    "cost": 0.13,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "spices and seasoning",
+                    "quantity": 0.1,
+                    "unit": "oz",
+                    "unit_price": 0.6,
+                    "cost": 0.06,
+                    "source": "RET"
+                }
+            ],
+            "rank": 3,
+            "band": "green"
+        },
+        {
+            "name": "Grilled Atlantic Salmon",
+            "description": "ece asparagus lemon butter",
+            "price": 27.5,
+            "matched_dish": "Grilled Salmon",
+            "match_score": 81.6,
+            "method": "database",
+            "confidence": "medium",
+            "notes": [],
+            "est_cost": 6.68,
+            "markup_multiple": 4.12,
+            "markup_pct": 312,
+            "food_cost_pct": 24.3,
+            "breakdown": [
+                {
+                    "ingredient": "salmon fillet",
+                    "quantity": 0.45,
+                    "unit": "lb",
+                    "unit_price": 10.99,
+                    "cost": 4.95,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "asparagus",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 1.0,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "lemon",
+                    "quantity": 0.5,
+                    "unit": "each",
+                    "unit_price": 0.6,
+                    "cost": 0.3,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "white rice",
+                    "quantity": 0.15,
+                    "unit": "lb",
+                    "unit_price": 0.99,
+                    "cost": 0.15,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "olive oil",
+                    "quantity": 0.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.3,
+                    "cost": 0.15,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "butter",
+                    "quantity": 0.03,
+                    "unit": "lb",
+                    "unit_price": 4.49,
+                    "cost": 0.13,
+                    "source": "BLS"
+                }
+            ],
+            "rank": 4,
+            "band": "lime"
+        },
+        {
+            "name": "Chicken Parmesan",
+            "description": "spaghett: marinara mozlarel:a",
+            "price": 21.0,
+            "matched_dish": "Chicken Parmesan",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 5.08,
+            "markup_multiple": 4.13,
+            "markup_pct": 313,
+            "food_cost_pct": 24.2,
+            "breakdown": [
+                {
+                    "ingredient": "chicken breast",
+                    "quantity": 0.5,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 2.0,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "marinara sauce",
+                    "quantity": 0.4,
+                    "unit": "lb",
+                    "unit_price": 2.49,
+                    "cost": 1.0,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "mozzarella",
+                    "quantity": 0.12,
+                    "unit": "lb",
+                    "unit_price": 4.99,
+                    "cost": 0.6,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "parmesan",
+                    "quantity": 0.03,
+                    "unit": "lb",
+                    "unit_price": 12.99,
+                    "cost": 0.39,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "dried pasta",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 1.49,
+                    "cost": 0.37,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "panko breadcrumbs",
+                    "quantity": 0.08,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 0.32,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "eggs",
+                    "quantity": 1.0,
+                    "unit": "each",
+                    "unit_price": 0.3,
+                    "cost": 0.3,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "frying oil (absorbed/amortized)",
+                    "quantity": 1.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.07,
+                    "cost": 0.11,
+                    "source": "WHL"
+                }
+            ],
+            "rank": 5,
+            "band": "lime"
+        },
+        {
+            "name": "Cnosar Salad",
+            "description": "romaine parmesan. CrOulOns",
+            "price": 11.0,
+            "matched_dish": null,
+            "match_score": 68.5,
+            "method": "keyword",
+            "confidence": "low",
+            "notes": [
+                "salad",
+                "mozzarella"
+            ],
+            "est_cost": 2.59,
+            "markup_multiple": 4.25,
+            "markup_pct": 325,
+            "food_cost_pct": 23.5,
+            "breakdown": [
+                {
+                    "ingredient": "mixed greens",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 5.99,
+                    "cost": 1.5,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "mozzarella",
+                    "quantity": 0.1,
+                    "unit": "lb",
+                    "unit_price": 4.99,
+                    "cost": 0.5,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "vinaigrette",
+                    "quantity": 1.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.18,
+                    "cost": 0.27,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "tomato",
+                    "quantity": 0.08,
+                    "unit": "lb",
+                    "unit_price": 1.99,
+                    "cost": 0.16,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "cucumber",
+                    "quantity": 0.08,
+                    "unit": "lb",
+                    "unit_price": 1.29,
+                    "cost": 0.1,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "spices and seasoning",
+                    "quantity": 0.1,
+                    "unit": "oz",
+                    "unit_price": 0.6,
+                    "cost": 0.06,
+                    "source": "RET"
+                }
+            ],
+            "rank": 6,
+            "band": "lime"
+        },
+        {
+            "name": "Margherita Pizza",
+            "description": "fregh morzare\u2019a bas",
+            "price": 16.0,
+            "matched_dish": "Margherita Pizza",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 3.6,
+            "markup_multiple": 4.44,
+            "markup_pct": 344,
+            "food_cost_pct": 22.5,
+            "breakdown": [
+                {
+                    "ingredient": "fresh mozzarella",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 8.99,
+                    "cost": 2.25,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "pizza dough",
+                    "quantity": 0.6,
+                    "unit": "lb",
+                    "unit_price": 1.2,
+                    "cost": 0.72,
+                    "source": "WHL"
+                },
+                {
+                    "ingredient": "crushed tomatoes",
+                    "quantity": 0.25,
+                    "unit": "lb",
+                    "unit_price": 1.29,
+                    "cost": 0.32,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "fresh basil",
+                    "quantity": 0.01,
+                    "unit": "lb",
+                    "unit_price": 15.99,
+                    "cost": 0.16,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "olive oil",
+                    "quantity": 0.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.3,
+                    "cost": 0.15,
+                    "source": "RET"
+                }
+            ],
+            "rank": 7,
+            "band": "lime"
+        },
+        {
+            "name": "Classic Cheeseburger",
+            "description": "",
+            "price": 15.99,
+            "matched_dish": "Cheeseburger",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 3.28,
+            "markup_multiple": 4.88,
+            "markup_pct": 388,
+            "food_cost_pct": 20.5,
+            "breakdown": [
+                {
+                    "ingredient": "ground beef",
+                    "quantity": 0.375,
+                    "unit": "lb",
+                    "unit_price": 5.49,
+                    "cost": 2.06,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "hamburger bun",
+                    "quantity": 1.0,
+                    "unit": "each",
+                    "unit_price": 0.4,
+                    "cost": 0.4,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "american cheese",
+                    "quantity": 0.06,
+                    "unit": "lb",
+                    "unit_price": 4.99,
+                    "cost": 0.3,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "tomato",
+                    "quantity": 0.08,
+                    "unit": "lb",
+                    "unit_price": 1.99,
+                    "cost": 0.16,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "pickles",
+                    "quantity": 0.03,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 0.12,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "mayonnaise",
+                    "quantity": 0.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.18,
+                    "cost": 0.09,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "iceberg lettuce",
+                    "quantity": 0.04,
+                    "unit": "lb",
+                    "unit_price": 1.49,
+                    "cost": 0.06,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "yellow onion",
+                    "quantity": 0.04,
+                    "unit": "lb",
+                    "unit_price": 1.29,
+                    "cost": 0.05,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "ketchup",
+                    "quantity": 0.5,
+                    "unit": "fl oz",
+                    "unit_price": 0.08,
+                    "cost": 0.04,
+                    "source": "RET"
+                }
+            ],
+            "rank": 8,
+            "band": "orange"
+        },
+        {
+            "name": "Draft Beer",
+            "description": "House Wine",
+            "price": 7.0,
+            "matched_dish": "Domestic Draft Beer",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 1.22,
+            "markup_multiple": 5.74,
+            "markup_pct": 474,
+            "food_cost_pct": 17.4,
+            "breakdown": [
+                {
+                    "ingredient": "domestic draft beer",
+                    "quantity": 16.0,
+                    "unit": "fl oz",
+                    "unit_price": 0.076,
+                    "cost": 1.22,
+                    "source": "BEV"
+                }
+            ],
+            "rank": 9,
+            "band": "orange"
+        },
+        {
+            "name": "Fountain Soda",
+            "description": "",
+            "price": 3.49,
+            "matched_dish": "Fountain Soda",
+            "match_score": 100.0,
+            "method": "database",
+            "confidence": "high",
+            "notes": [],
+            "est_cost": 0.6,
+            "markup_multiple": 5.82,
+            "markup_pct": 482,
+            "food_cost_pct": 17.2,
+            "breakdown": [
+                {
+                    "ingredient": "fountain soda syrup (finished drink)",
+                    "quantity": 20.0,
+                    "unit": "fl oz",
+                    "unit_price": 0.03,
+                    "cost": 0.6,
+                    "source": "WHL"
+                }
+            ],
+            "rank": 10,
+            "band": "orange"
+        },
+        {
+            "name": "lettuce tomate picbies 1",
+            "description": "",
+            "price": 85.0,
+            "matched_dish": null,
+            "match_score": 64.8,
+            "method": "keyword",
+            "confidence": "low",
+            "notes": [
+                "no keywords \u2014 generic plate guess"
+            ],
+            "est_cost": 2.12,
+            "markup_multiple": 40.09,
+            "markup_pct": 3909,
+            "food_cost_pct": 2.5,
+            "breakdown": [
+                {
+                    "ingredient": "chicken breast",
+                    "quantity": 0.3,
+                    "unit": "lb",
+                    "unit_price": 3.99,
+                    "cost": 1.2,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "mixed greens",
+                    "quantity": 0.1,
+                    "unit": "lb",
+                    "unit_price": 5.99,
+                    "cost": 0.6,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "white rice",
+                    "quantity": 0.2,
+                    "unit": "lb",
+                    "unit_price": 0.99,
+                    "cost": 0.2,
+                    "source": "BLS"
+                },
+                {
+                    "ingredient": "vegetable oil",
+                    "quantity": 1,
+                    "unit": "fl oz",
+                    "unit_price": 0.07,
+                    "cost": 0.07,
+                    "source": "RET"
+                },
+                {
+                    "ingredient": "spices and seasoning",
+                    "quantity": 0.1,
+                    "unit": "oz",
+                    "unit_price": 0.6,
+                    "cost": 0.06,
+                    "source": "RET"
+                }
+            ],
+            "rank": 11,
+            "band": "red"
+        }
+    ]
+}

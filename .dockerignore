@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.pid
+tunnel.sh
+tunnel_url.txt
+backups/
+screenshots/
+menu_markup.db
+.git/

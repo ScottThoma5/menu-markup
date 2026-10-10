@@ -1,0 +1,241 @@
+name,unit,price_usd,category,source
+chicken breast,lb,3.99,protein,BLS
+chicken thigh,lb,3.29,protein,BLS
+chicken wings,lb,3.49,protein,RET
+whole chicken,lb,1.99,protein,BLS
+ground beef,lb,5.49,protein,BLS
+ribeye steak,lb,13.99,protein,RET
+sirloin steak,lb,9.99,protein,BLS
+ny strip steak,lb,12.99,protein,RET
+beef tenderloin,lb,22.99,protein,RET
+beef chuck,lb,6.99,protein,BLS
+flank steak,lb,10.99,protein,RET
+beef short ribs,lb,9.99,protein,RET
+corned beef,lb,7.99,protein,RET
+roast beef deli,lb,10.99,protein,RET
+pork shoulder,lb,2.99,protein,RET
+pork chop,lb,4.49,protein,BLS
+pork belly,lb,5.49,protein,RET
+pork ribs,lb,3.99,protein,RET
+ground pork,lb,3.99,protein,RET
+bacon,lb,6.99,protein,BLS
+ham deli,lb,7.99,protein,BLS
+italian sausage,lb,4.99,protein,RET
+breakfast sausage,lb,4.49,protein,RET
+pepperoni,lb,8.99,protein,RET
+chorizo,lb,5.99,protein,RET
+prosciutto,lb,19.99,protein,RET
+salami,lb,11.99,protein,RET
+turkey deli,lb,8.99,protein,RET
+ground turkey,lb,4.99,protein,RET
+lamb,lb,11.99,protein,RET
+duck breast,lb,14.99,protein,WHL
+hot dog frank,each,0.60,protein,RET
+salmon fillet,lb,10.99,seafood,RET
+sushi grade tuna,lb,19.99,seafood,WHL
+yellowtail,lb,17.99,seafood,WHL
+shrimp,lb,9.99,seafood,RET
+cod,lb,9.99,seafood,RET
+tilapia,lb,5.99,seafood,RET
+crab meat,lb,24.99,seafood,RET
+imitation crab,lb,4.99,seafood,RET
+lobster meat,lb,39.99,seafood,WHL
+scallops,lb,22.99,seafood,RET
+mussels,lb,4.99,seafood,RET
+clams,lb,6.99,seafood,RET
+calamari,lb,7.99,seafood,WHL
+eel unagi,lb,18.99,seafood,WHL
+tofu,lb,2.49,protein,RET
+eggs,each,0.30,dairy,BLS
+milk,fl oz,0.031,dairy,BLS
+heavy cream,fl oz,0.20,dairy,RET
+half and half,fl oz,0.10,dairy,RET
+butter,lb,4.49,dairy,BLS
+mozzarella,lb,4.99,dairy,RET
+fresh mozzarella,lb,8.99,dairy,RET
+cheddar cheese,lb,5.49,dairy,BLS
+american cheese,lb,4.99,dairy,BLS
+swiss cheese,lb,7.99,dairy,RET
+provolone,lb,6.99,dairy,RET
+parmesan,lb,12.99,dairy,RET
+monterey jack,lb,4.99,dairy,RET
+feta,lb,7.99,dairy,RET
+goat cheese,lb,11.99,dairy,RET
+blue cheese,lb,9.99,dairy,RET
+ricotta,lb,4.49,dairy,RET
+cream cheese,lb,3.99,dairy,RET
+sour cream,lb,2.99,dairy,RET
+queso fresco,lb,5.99,dairy,RET
+cotija,lb,6.99,dairy,RET
+paneer,lb,8.99,dairy,RET
+gruyere,lb,15.99,dairy,RET
+yogurt,lb,2.49,dairy,RET
+ice cream,lb,3.99,dairy,BLS
+whipped cream,fl oz,0.15,dairy,RET
+romaine lettuce,lb,2.49,produce,BLS
+iceberg lettuce,lb,1.49,produce,BLS
+mixed greens,lb,5.99,produce,RET
+spinach,lb,3.99,produce,RET
+arugula,lb,7.99,produce,RET
+kale,lb,3.49,produce,RET
+tomato,lb,1.99,produce,BLS
+cherry tomatoes,lb,3.99,produce,RET
+yellow onion,lb,1.29,produce,BLS
+red onion,lb,1.49,produce,RET
+garlic,lb,4.99,produce,RET
+russet potato,lb,0.89,produce,BLS
+sweet potato,lb,1.29,produce,RET
+carrot,lb,1.19,produce,BLS
+celery,lb,1.49,produce,RET
+bell pepper,lb,2.99,produce,BLS
+jalapeno,lb,1.99,produce,RET
+cucumber,lb,1.29,produce,RET
+avocado,each,1.25,produce,RET
+lemon,each,0.60,produce,BLS
+lime,each,0.35,produce,RET
+cilantro,lb,3.99,produce,RET
+fresh basil,lb,15.99,produce,RET
+parsley,lb,3.99,produce,RET
+mint,lb,12.99,produce,RET
+green onion,lb,2.99,produce,RET
+ginger,lb,3.99,produce,RET
+mushrooms,lb,3.99,produce,RET
+zucchini,lb,1.79,produce,RET
+eggplant,lb,1.79,produce,RET
+broccoli,lb,2.49,produce,BLS
+cauliflower,lb,2.49,produce,RET
+cabbage,lb,0.89,produce,RET
+bok choy,lb,1.99,produce,RET
+bean sprouts,lb,2.49,produce,RET
+corn,lb,1.99,produce,RET
+green beans,lb,2.49,produce,RET
+peas,lb,1.99,produce,RET
+asparagus,lb,3.99,produce,RET
+edamame,lb,3.49,produce,RET
+banana,lb,0.62,produce,BLS
+strawberries,lb,3.99,produce,BLS
+blueberries,lb,5.99,produce,RET
+apple,lb,1.79,produce,BLS
+orange,each,0.80,produce,BLS
+pineapple,lb,1.29,produce,RET
+mango,each,1.00,produce,RET
+pickles,lb,3.99,produce,RET
+olives,lb,6.99,produce,RET
+capers,oz,0.50,pantry,RET
+nori sheet,each,0.20,pantry,RET
+walnuts,lb,7.99,pantry,RET
+pecans,lb,9.99,pantry,RET
+peanuts,lb,3.99,pantry,RET
+cashews,lb,8.99,pantry,RET
+pine nuts,lb,29.99,pantry,RET
+croutons,lb,4.99,pantry,RET
+all-purpose flour,lb,0.55,grain,BLS
+dried pasta,lb,1.49,grain,BLS
+fresh pasta,lb,5.99,grain,RET
+white rice,lb,0.99,grain,BLS
+sushi rice,lb,1.79,grain,RET
+basmati rice,lb,1.99,grain,RET
+arborio rice,lb,3.49,grain,RET
+bread loaf,lb,3.49,grain,BLS
+sandwich bread slice,each,0.15,grain,BLS
+hamburger bun,each,0.40,grain,RET
+brioche bun,each,0.75,grain,RET
+hot dog bun,each,0.30,grain,RET
+sub roll,each,0.70,grain,RET
+flour tortilla,each,0.25,grain,RET
+corn tortilla,each,0.06,grain,RET
+tortilla chips,lb,3.49,grain,RET
+pizza dough,lb,1.20,grain,WHL
+english muffin,each,0.50,grain,RET
+bagel,each,0.75,grain,RET
+croissant,each,1.00,grain,WHL
+ramen noodles,lb,3.99,grain,RET
+rice noodles,lb,2.99,grain,RET
+egg noodles,lb,2.49,grain,RET
+udon noodles,lb,3.49,grain,RET
+panko breadcrumbs,lb,3.99,grain,RET
+naan,each,0.75,grain,RET
+pita,each,0.40,grain,RET
+oats,lb,1.99,grain,RET
+sugar,lb,0.89,pantry,BLS
+brown sugar,lb,1.19,pantry,RET
+maple syrup,fl oz,0.60,pantry,RET
+pancake syrup,fl oz,0.12,pantry,RET
+honey,lb,7.99,pantry,RET
+chocolate,lb,7.99,pantry,RET
+cocoa powder,oz,0.50,pantry,RET
+vanilla extract,fl oz,3.00,pantry,RET
+olive oil,fl oz,0.30,pantry,RET
+vegetable oil,fl oz,0.07,pantry,RET
+frying oil (absorbed/amortized),fl oz,0.07,pantry,WHL
+soy sauce,fl oz,0.12,pantry,RET
+crushed tomatoes,lb,1.29,pantry,RET
+marinara sauce,lb,2.49,pantry,RET
+tomato paste,oz,0.15,pantry,RET
+salsa,lb,3.49,pantry,RET
+black beans,lb,0.99,pantry,RET
+refried beans,lb,1.49,pantry,RET
+chickpeas,lb,1.29,pantry,RET
+lentils,lb,1.69,pantry,RET
+coconut milk,fl oz,0.20,pantry,RET
+curry paste,oz,0.40,pantry,RET
+spices and seasoning,oz,0.60,pantry,RET
+mayonnaise,fl oz,0.18,pantry,RET
+ketchup,fl oz,0.08,pantry,RET
+mustard,fl oz,0.10,pantry,RET
+bbq sauce,fl oz,0.12,pantry,RET
+buffalo hot sauce,fl oz,0.15,pantry,RET
+ranch dressing,fl oz,0.16,pantry,RET
+caesar dressing,fl oz,0.20,pantry,RET
+vinaigrette,fl oz,0.18,pantry,RET
+balsamic vinegar,fl oz,0.35,pantry,RET
+vinegar,fl oz,0.05,pantry,RET
+hoisin sauce,fl oz,0.20,pantry,RET
+oyster sauce,fl oz,0.18,pantry,RET
+sesame oil,fl oz,0.45,pantry,RET
+fish sauce,fl oz,0.20,pantry,RET
+rice vinegar,fl oz,0.12,pantry,RET
+mirin,fl oz,0.25,pantry,RET
+miso paste,oz,0.35,pantry,RET
+sriracha,fl oz,0.18,pantry,RET
+teriyaki sauce,fl oz,0.18,pantry,RET
+pesto,oz,0.60,pantry,RET
+chicken stock,fl oz,0.08,pantry,RET
+wasabi,oz,0.80,pantry,RET
+pickled ginger,oz,0.30,pantry,RET
+gochujang,oz,0.40,pantry,RET
+tahini,oz,0.40,pantry,RET
+peanut butter,lb,3.49,pantry,RET
+jam,lb,4.99,pantry,RET
+chocolate syrup,fl oz,0.12,pantry,RET
+cornstarch,lb,1.99,pantry,RET
+coffee beans,lb,9.99,beverage,BLS
+tea bag,each,0.10,beverage,RET
+matcha powder,oz,3.00,beverage,RET
+fountain soda syrup (finished drink),fl oz,0.03,beverage,WHL
+canned soda,each,0.50,beverage,RET
+orange juice,fl oz,0.07,beverage,BLS
+cranberry juice,fl oz,0.05,beverage,RET
+lemonade,fl oz,0.04,beverage,WHL
+tonic water,fl oz,0.06,beverage,RET
+club soda,fl oz,0.03,beverage,RET
+ginger beer,fl oz,0.10,beverage,RET
+oat milk,fl oz,0.04,beverage,RET
+simple syrup,fl oz,0.03,beverage,WHL
+margarita mix,fl oz,0.08,beverage,RET
+domestic draft beer,fl oz,0.076,alcohol,BEV
+craft draft beer,fl oz,0.11,alcohol,BEV
+bottled beer,each,1.25,alcohol,BEV
+house wine,fl oz,0.39,alcohol,BEV
+premium wine,fl oz,0.80,alcohol,BEV
+prosecco,fl oz,0.45,alcohol,BEV
+sake,fl oz,0.60,alcohol,BEV
+vodka,fl oz,0.59,alcohol,BEV
+gin,fl oz,0.75,alcohol,BEV
+white rum,fl oz,0.55,alcohol,BEV
+tequila,fl oz,0.87,alcohol,BEV
+bourbon whiskey,fl oz,1.00,alcohol,BEV
+triple sec,fl oz,0.40,alcohol,BEV
+sweet vermouth,fl oz,0.45,alcohol,BEV
+coffee liqueur,fl oz,0.70,alcohol,BEV
+angostura bitters,dash,0.05,alcohol,BEV

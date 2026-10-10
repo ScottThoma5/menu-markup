@@ -6,3 +6,5 @@ __pycache__/
 tunnel_url.txt
 backups/
 menu_markup.db
+screenshots/
+tunnel.sh

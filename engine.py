@@ -1,6 +1,6 @@
 """Menu Markup core: OCR, menu-line parsing, dish matching and ingredient costing."""
 from __future__ import annotations
-import io, re, sqlite3
+import io, os, re, sqlite3
 from functools import lru_cache
 from pathlib import Path
 
@@ -43,13 +43,26 @@ def reload_catalog():
     load_catalog.cache_clear()
 
 # ---------------------------------------------------------------- OCR
+# Tuned for tiny hosts (e.g. Render free: 0.1 CPU / 512 MB). Override via env vars.
+OCR_MAX_WIDTH = int(os.environ.get("OCR_MAX_WIDTH", "1600"))    # downscale wider images to this
+OCR_MIN_WIDTH = int(os.environ.get("OCR_MIN_WIDTH", "1400"))    # upscale narrower images to OCR_MAX_WIDTH
+OCR_MAX_PIXELS = int(os.environ.get("OCR_MAX_PIXELS", "4000000"))  # cap total pixels (very tall menus)
+OCR_PASSES = max(1, min(4, int(os.environ.get("OCR_PASSES", "1"))))  # 1 = single best pass; up to 4 variants
+OCR_TIMEOUT = float(os.environ.get("OCR_TIMEOUT", "50"))        # seconds per tesseract call
+OCR_GOOD_ENOUGH = 0.9   # stop extra passes early when >=90% of parsed lines match known dishes
+
 def preprocess(img: Image.Image) -> Image.Image:
+    if img.format == "JPEG":   # fast DCT-domain downscale while decoding big phone photos
+        img.draft("L", (OCR_MAX_WIDTH, OCR_MAX_WIDTH))  # keeps both sides >= max width (EXIF-rotation safe)
     img = ImageOps.exif_transpose(img).convert("L")
     w, h = img.size
-    target = 2000
-    if w < 1400 or w > 3000:
-        s = target / w
-        img = img.resize((int(w * s), int(h * s)), Image.LANCZOS)
+    s = 1.0
+    if w > OCR_MAX_WIDTH or w < OCR_MIN_WIDTH:
+        s = OCR_MAX_WIDTH / w
+    if w * h * s * s > OCR_MAX_PIXELS:
+        s = (OCR_MAX_PIXELS / (w * h)) ** 0.5
+    if abs(s - 1.0) > 0.01:
+        img = img.resize((max(1, int(w * s)), max(1, int(h * s))), Image.LANCZOS)
     img = ImageOps.autocontrast(img, cutoff=1)
     return img.filter(ImageFilter.SHARPEN)
 
@@ -76,18 +89,32 @@ def _quality(items) -> float:
         q += 1.0 if score >= MED else 0.4 if score >= 55 else 0.1
     return q
 
-def ocr_image(data: bytes) -> str:
+def ocr_image(data: bytes, passes: int | None = None) -> str:
+    """OCR a menu photo. Runs the single best variant (Otsu-binarized, psm 4) by default;
+    OCR_PASSES=2..4 also tries other variants and keeps the one whose lines best match known dishes."""
+    passes = OCR_PASSES if passes is None else max(1, min(4, passes))
     base = preprocess(Image.open(io.BytesIO(data)))
     den = base.filter(ImageFilter.MedianFilter(3))
     t = _otsu(den)
     binary = den.point(lambda p: 255 if p > t else 0)
-    best, best_q = "", -1.0
     # psm 4 = single column of variable-size text, psm 6 = uniform block
-    for img, psm in ((binary, 4), (base, 4), (den, 4), (base, 6)):
-        txt = pytesseract.image_to_string(img, config=f"--oem 1 --psm {psm}")
-        q = _quality(parse_menu_text(txt))
+    variants = ((lambda: binary, 4), (lambda: base, 4), (lambda: den, 4), (lambda: base, 6))[:passes]
+    best, best_q = "", -1.0
+    for get_img, psm in variants:
+        try:
+            txt = pytesseract.image_to_string(get_img(), config=f"--oem 1 --psm {psm}", timeout=OCR_TIMEOUT)
+        except RuntimeError as e:   # pytesseract raises RuntimeError on timeout
+            if best:
+                break
+            raise TimeoutError("reading the menu took too long; try a smaller or clearer photo") from e
+        if passes == 1:
+            return txt
+        items = parse_menu_text(txt)
+        q = _quality(items)
         if q > best_q:
             best, best_q = txt, q
+        if items and q >= OCR_GOOD_ENOUGH * len(items):
+            break
     return best
 
 # ---------------------------------------------------------------- parsing
@@ -138,7 +165,8 @@ def clean_name(s: str) -> str:
     s = re.split(r"\s?[.,·…:;_]{2,}|\s[.,·…]\s", s, maxsplit=1)[0]
     s = " ".join(t for t in s.split() if not (JUNK_TOKEN.match(t) and sum(t.lower().count(c) for c in "ce") >= 3))
     toks = s.split()
-    while toks and re.fullmatch(r"[oOcCeE.,'`\-~=]{1,3}", toks[-1]):  # trailing leader debris ("oo")
+    # trailing leader debris: "oo", "00", "1.1" (dots misread as zeros/ones); keeps real tokens like "Combo 1"
+    while toks and re.fullmatch(r"[oOcCeE.,'`\-~=]{1,3}|[0oO]{2,3}|[01][.,][01]", toks[-1]):
         toks.pop()
     s = LEADERS.sub(" ", " ".join(toks))
     s = re.sub(r"^[\W_]+|[\W_]+$", "", s)

@@ -1,12 +1,18 @@
 """Menu Markup — FastAPI app. Run: ./run.sh  (or: .venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000)"""
+import asyncio, os, time
+
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 import engine
 
+VERSION = "2026.10.16-fastocr"
 app = FastAPI(title="Menu Markup")
+# One OCR job at a time: a tiny host (0.1 CPU) gets slower, not faster, with parallel tesseract runs.
+OCR_SLOTS = asyncio.Semaphore(int(os.environ.get("OCR_CONCURRENCY", "1")))
 
 class Item(BaseModel):
     name: str
@@ -27,7 +33,7 @@ def index():
 @app.get("/api/health")
 def health():
     ings, dishes, _ = engine.load_catalog()
-    return {"ok": True, "ingredients": len(ings), "dishes": len(dishes)}
+    return {"ok": True, "version": VERSION, "ocr_passes": engine.OCR_PASSES, "ingredients": len(ings), "dishes": len(dishes)}
 
 @app.post("/api/upload")
 async def upload(file: UploadFile = File(...)):
@@ -36,12 +42,17 @@ async def upload(file: UploadFile = File(...)):
         raise HTTPException(400, "empty file")
     if len(data) > 25 * 1024 * 1024:
         raise HTTPException(413, "image too large (25 MB max)")
+    t0 = time.monotonic()
     try:
-        text = engine.ocr_image(data)
+        async with OCR_SLOTS:   # OCR runs in a worker thread so /api/health stays responsive
+            text = await run_in_threadpool(engine.ocr_image, data)
+    except TimeoutError as e:
+        raise HTTPException(504, str(e))
     except Exception as e:
         raise HTTPException(400, f"could not read image: {e}")
     items = engine.parse_menu_text(text)
-    return {"ocr_text": text, "items": items, **engine.analyze_items(items)}
+    return {"ocr_text": text, "items": items, "ocr_seconds": round(time.monotonic() - t0, 2),
+            **engine.analyze_items(items)}
 
 @app.post("/api/parse")
 def parse(body: TextIn):

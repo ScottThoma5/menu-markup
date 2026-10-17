@@ -60,6 +60,8 @@ input[type=file]{display:none}
 .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
 #status{font-size:.88rem;color:var(--mut);flex:1 1 100%}
 #status:empty{display:none}
+.spin{display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;border:2px solid rgba(213,163,83,.3);border-top-color:var(--gold);border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
 /* ---------- edit box ---------- */
 textarea{width:100%;min-height:170px;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:.82rem;line-height:1.55;color:var(--tx);
   background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;resize:vertical}
@@ -163,11 +165,16 @@ const drop=$('#drop');['dragenter','dragover'].forEach(t=>drop.addEventListener(
 ['dragleave','drop'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove('drag')}));
 drop.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(!f||!f.type.startsWith('image/'))return;const dt=new DataTransfer();dt.items.add(f);$('#file').files=dt.files;pickFile(f)});
 $('#go').onclick=async()=>{const f=$('#file').files[0];if(!f)return;const fd=new FormData();fd.append('file',f);
-  $('#go').disabled=true;$('#go').textContent='Reading…';$('#status').textContent='⏳ Reading menu (OCR can take 5–20 s)…';
-  try{const r=await fetch('/api/upload',{method:'POST',body:fd});const j=await r.json();if(!r.ok)throw new Error(j.detail||r.status);
+  $('#go').disabled=true;$('#go').textContent='Reading…';const st=$('#status');const t0=Date.now();
+  const tick=()=>{const s=Math.round((Date.now()-t0)/1000);st.innerHTML='<span class="spin"></span>Reading your menu, this can take up to a minute… <span class="mut">'+s+'s</span>'};
+  tick();const iv=setInterval(tick,1000);const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),150000);
+  try{const r=await fetch('/api/upload',{method:'POST',body:fd,signal:ctl.signal});let j=null;try{j=await r.json()}catch(_){}
+    if(!r.ok){const d=j&&j.detail;throw new Error(r.status===504||r.status===502||r.status===503?'The server took too long reading this photo (it may be waking up). Please try again, or use a smaller, straight-on photo.':(typeof d==='string'?d:'Upload failed (error '+r.status+'). Please try again.'))}
+    if(!j||!Array.isArray(j.items))throw new Error('Got an unexpected reply from the server. Please try again.');
     overrides={};$('#items').value=j.items.map(toLine).join('\n');render(j);
-    $('#status').textContent=j.count?`✅ Found ${j.count} priced items. Check the list below for OCR mistakes.`:'⚠️ No prices found — try a sharper, straight-on photo or type items below.';
-  }catch(e){$('#status').textContent='❌ '+e.message}finally{$('#go').disabled=false;$('#go').textContent='Read menu'}};
+    st.textContent=j.count?`✅ Found ${j.count} priced items. Check the list below for OCR mistakes.`:'⚠️ No prices found — try a sharper, straight-on photo or type items below.';
+  }catch(e){st.textContent='❌ '+(e.name==='AbortError'?'Reading took too long. Please try again, or type the items in step 2.':(e instanceof TypeError?'Could not reach the server. Check your connection and try again.':e.message))}
+  finally{clearInterval(iv);clearTimeout(to);$('#go').disabled=false;$('#go').textContent='Read menu'}};
 const toLine=i=>[i.name,i.price.toFixed(2),i.description].filter(Boolean).join(' | ');
 function parseLines(){return $('#items').value.split('\n').map(l=>l.split('|').map(s=>s.trim())).filter(p=>p[0]&&p[1]&&!isNaN(parseFloat(p[1].replace('$',''))))
   .map(p=>({name:p[0],price:parseFloat(p[1].replace('$','')),description:p.slice(2).join(' '),dish:overrides[p[0]]||''}));}
